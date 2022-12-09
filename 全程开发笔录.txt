@@ -1,0 +1,53 @@
+个人文档借鉴:
+实现系统管理网页样式
+https://blog.csdn.net/weixin_52837547/article/details/127750181
+
+实现用户登录和注册页面
+https://blog.csdn.net/qq_19558705/article/details/50318981?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166917229316800215065771%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166917229316800215065771&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-4-50318981-null-null.142^v66^control,201^v3^control_2,213^v2^t3_control2&utm_term=%E7%99%BB%E5%BD%95%E6%B3%A8%E5%86%8C%E9%A1%B5%E9%9D%A2bootstrap&spm=1018.2226.3001.4187
+
+
+添加WebMVC拦截器 Interceptor
+
+
+实现文字特效借鉴博文
+https://blog.csdn.net/xw1680/article/details/118065460?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166925942916800180697916%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166925942916800180697916&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-1-118065460-null-null.142^v66^control,201^v3^control_2,213^v2^t3_control2&utm_term=%E7%82%AB%E9%85%B7CSS%E5%AD%97%E4%BD%93&spm=1018.2226.3001.4187
+
+借鉴首页网页样式
+http://www.lolfz81.com/
+
+
+SpringBoot图片操作参考博文
+https://blog.csdn.net/qq_36134376/article/details/116107651
+修改数据库图片 form表单需要属性enctype="multipart/form-data"
+
+
+踩坑:
+SpringBoot前后端根据属性传输参数 注意参数一一对应,传入数据库记得参数转化一致
+Integer sid,String   sname,String  detail,String money,  MultipartFile simg, String  status
+System.getProperty("user.dir")使用了系统路径 所有允许此项目不会出现文件传输路径出错的情况
+
+参考源码实现登陆器拦截后台管理页面
+https://github.com/oneStarLR/myblog-mybatis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
