@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8C">
+    <title>TearStoreMainPage</title>
+    <meta charset="UTF-8">
+    <link rel="icon" th:href="@{/img/usingTestIcon.ico}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- 引入bootstrap的css-->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="bootsstrap/css/bootstrap-theme.css"/> -->
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .IndexFont{
+
+            text-align: center;
+            font-weight: bolder;
+            font-size: 30px;
+            font-family:"华文彩云";
+        }
+        .IndexFont:hover{
+            background-image: none;
+            text-decoration: #e232c8;
+            font-size: 50px;
+            font-family:"微软雅黑";
+            margin-bottom: 10px;
+            animation: shine 2.4s 1;
+
+        }
+        .product_list{
+            clear: both;
+            padding: 35px 10px 0;
+        }
+        .product_img{
+
+            padding-left: 15px;
+            padding-right: 15px;
+            min-height: 280px;
+            margin-top: 10px;
+            background-image: linear-gradient(gray, #252424);
+            width: 400px;
+            height: 300px;
+        }
+        .product_new{
+            text-align: center;
+        }
+        .product_new  a{
+           box-shadow: 3px 3px 3px greenyellow;
+            color: white;
+            background: red;
+            font-size: 18px;
+          margin-right: 5px;
+            padding-left: 5px;
+        }
+        .product_new  a:hover{
+            box-shadow: 3px 3px 3px greenyellow;
+            text-decoration: none;
+            color: white;
+            background: red;
+            font-size: 18px;
+            opacity: 0.5;
+            margin-right: 5px;
+            padding-left: 5px;
+            animation: ChangeBig 2s  infinite;
+        }
+        @keyframes ChangeBig {
+            0%{
+        transform: rotate(0);
+        }100%{
+            transform: rotate(30deg);
+                     }
+        }
+        .product_img img {
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            max-height: 360px;
+        }
+        img{
+            vertical-align: middle;
+        }
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+        a:hover{
+            color: white;
+            text-decoration: red 2px ;
+        }
+        a:active{
+            color: black;
+        }
+        .product_title{
+            text-align: center;
+        }
+
+        @keyframes shine {
+            /*荧光特效*/
+            0%,100%{
+                color:#fff;
+                text-shadow:0 0 10px #0000FF,0 0 10px #0000FF;
+            }
+            50%{
+                text-shadow:0 0 10px #0000FF,0 0 40px #0000FF;
+            }
+        }
+
+
+        /*下部分*/
+        .title_h2{
+            color: #fff;
+            margin: 0;
+            display: block;
+            padding: 26px 0 0 25px;
+            height: 70px;
+            font-size: 18px;
+            background-color: #3a3a3a;
+            background-image: linear-gradient(#3a3a3a,#1e1e1e);
+        }
+        .index_news{
+            clear: both;
+            list-style: none;
+            margin: 0;
+            padding: 10px 10px 15px;
+            background-image: linear-gradient(gray, #212020);
+
+        }
+        .index_news li{
+            padding-top: 10px;
+        }
+        .index_news a{
+           text-decoration: none;
+            color: white;
+        }
+        .index_news a:active{
+            text-decoration: none;
+            color: purple;
+        }
+        .index_news a:hover{
+            text-decoration: none;
+            color: deepskyblue;
+            cursor: pointer;
+        }
+        .news_time{
+            text-align: right;
+            float: right;
+            color: white;
+        }
+        .news_box{
+            margin: 30px 0 0;
+            background-color: #424242;
+        }
+        .col-xs-12{
+            margin-top: 30px;
+        }
+        .contact_box{
+            background-color: #424242;
+            margin-top: 30px;
+        }
+        p{
+            margin: 0 0 10px;
+        }
+
+        .index_contact p {
+            clear: both;
+            color: #d8d7d7;
+            padding: 0 15px 2px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div style="background-image: url('/img/loginBg.jpg')">
+<h1 class="IndexFont">泪心商城TearTechnology</h1>
+
+<!--轮播图-->
+<div class="container" >
+    <div class="carousel slide" id="slidershow" data-ride="carousel" data-interval="2000">
+        <!--计数器-->
+        <ol class="carousel-indicators">
+            <li class="active" data-target="#slidershow" data-slide-to="0"></li>
+            <li data-target="#slidershow" data-slide-to="1"></li>
+            <li data-target="#slidershow" data-slide-to="2"></li>
+        </ol>
+        <!--图片容器-->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img  src="../../static/img/GGOne.png" th:src="@{/img/GGOne.png}"/>
+                <!--添加对应标题和内容-->
+                <div class="carousel-caption">
+                    <h4 style="color: red;font-size: 25px;">Lua语言</h4>
+                    <span style="color: red;">学习路线</span>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://img-blog.csdnimg.cn/7f573dd56a6d4d35b8d53f02a0249eac.png"/>
+                <!--添加对应标题和内容-->
+                <div class="carousel-caption">
+                    <h4>安卓12解触控保护</h4>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://img-blog.csdnimg.cn/a0c4bb3094204fbe9b3fb6ffb986f261.png"/>
+                <!--添加对应标题和内容-->
+                <div class="carousel-caption">
+                    <h4 style="color: red;font-size: 25px;">一体化修改器内置脚本</h4>
+                </div>
+            </div>
+            <!--轮播导航-->
+<!--            <a href="#slidershow" data-slide="prev" class="left carousel    -control" role="button">-->
+<!--                <img style="height: 20px;width: auto;float: left;position: fixed;text-align: center;" src="../../static/img/zuojiantou.png"/>-->
+<!--            </a>-->
+<!--            <a href="#slidershow" data-slide="next" class="right carousel-control" role="button">-->
+<!--                <img style="height: 20px;width: auto;float: right;"  src="../../static/img/youjiantou.png"/>-->
+<!--            </a>-->
+        </div>
+    </div>
+
+<!--滚动条-->
+<marquee style="margin-top: 10px;line-height: 40px;font-size: 20px;color: #fc0;background-color: #333;">购买任何商品请单方面联系QQ523341786</marquee>
+
+</div>
+
+<!--前半部分结束-->
+<!--开始中间部分-->
+<div style="background-image: linear-gradient(gray,#2c2929);box-sizing: border-box;">
+<h2  style="margin:0;display: block;height: 70px;font-size: 18px;
+background-color: #09e11a;
+background-image: linear-gradient(gray,#333);
+padding: 26px 0 0 25px;color: white;font-weight: bolder;">商城总览</h2>
+<div class="product_list"  >
+<!--    //商品... sid sname detail  money  status  simg-->
+<!--    在这里尝试遍历商品--首次测试For Tear -->
+    <div class="col-sm-4 col-sm-3 col-md-6 product_img" th:each="thing:${things}">
+            <a href="#">
+        <img src="../../static/img/zuojiantou.png"   th:src="${thing.simg}"  title="First Test Thing" alt="Test Something">
+            </a>
+        <p class="product_title">
+            <a href="#" style="color: lightgray;text-decoration: none;font-weight: bolder;font-size: 19px;" th:text="${thing.sname}">Test测试商品
+            <i style="color: red;">【已禁用】</i> </a>
+        </p>
+        <p class="product_new">
+            <strong style="color: white">商品特点:</strong>
+            <span style="color: #ff0" th:text="${thing.detail}">强势回馈新人,都是从零学习。</span>
+        </p>
+        <p class="product_new">
+            <strong style="color: white">价格:</strong>
+            <span style="color: #ff0" ><span th:text="${thing.money}">5</span>/天</span>
+        </p>
+        <p class="product_new" style="text-align: center;">
+            <a target="_blank"   rel="nofollow" href="#">点击预览</a>
+            <a rel="nofollow"  href="#" target="_blank">立即购买</a>
+        </p>
+    </div>
+    <!--    第二个商品-->
+<!--    <div class="col-sm-4 col-sm-3 col-md-6 product_img">-->
+<!--        <a href="#">-->
+<!--            <img src="../../static/img/youjiantou.png" th:src="@{/img/youjiantou.png}"  title="First Test Thing" alt="Test Something">-->
+<!--        </a>-->
+<!--        <p class="product_title">-->
+<!--            <a href="#">Test测试商品-->
+<!--                <i style="color: red;">【已禁用】</i> </a>-->
+<!--        </p>-->
+<!--        <p class="product_new">-->
+<!--            <strong style="color: white">商品特点:</strong>-->
+<!--            <span style="color: #ff0">强势回馈新人,都是从零学习。</span>-->
+<!--        </p>-->
+<!--        <p class="product_new">-->
+<!--            <strong style="color: white">价格:</strong>-->
+<!--            <span style="color: #ff0">5元/天</span>-->
+<!--        </p>-->
+<!--        <p class="product_new" style="text-align: center;">-->
+<!--            <a target="_blank"   rel="nofollow" href="#">点击预览</a>-->
+<!--            <a rel="nofollow"  href="#" target="_blank">立即购买</a>-->
+<!--        </p>-->
+<!--    </div>-->
+
+
+</div>
+
+
+</div>
+
+
+
+
+<!--启动下部分-->
+ <div class="col-xs-12 col-sm-8 col-md-7">
+     <div class="news_box">
+         <h2 class="title_h2">行业相关</h2>
+         <ul class="index_news">
+            <li>
+                <a href="#" title="S?">手游安全研究方向:关于怎么保护so模块不被破解以及对修改器的进一步检测力度</a>
+                <span class="news_time">2022-11-24</span>
+            </li>
+             <li>
+                 <a href="#" title="S?">网络安全研究方向:关于使用驱动强制屏蔽一切对于内存的读写,使用比C++更安全的语言保证程序的安全性</a>
+                 <span class="news_time">2022-11-25</span>
+             </li>
+             <li>
+                 <a href="#" title="S?">网站搭建方向:关于利用第三方工具搭建合适的动态网站,并完善后端的漏洞和功能实现。</a>
+                 <span class="news_time">2022-11-26</span>
+             </li>
+             <li>
+                 <a href="#" title="S?">Java语言:集微信小程序、网站于一体,另可直接实现AS安卓方面的开发。</a>
+                 <span class="news_time">2022-11-27</span>
+             </li>
+             <li>
+                 <a href="#" title="S?">如何尽快掌握全栈开发:熟悉后端框架开发流程,能够部署Linux服务器,掌握前端模板的修改及使用,熟练使用第三方接口</a>
+                 <span class="news_time">2022-11-28</span>
+             </li>
+         </ul>
+     </div>
+ </div>
+<!--        下部分右边呃盒子-->
+    <div class="col-xs-12 col-sm-4 col-md-5">
+        <div class="contact_box">
+            <div class="index_contact" style="padding-bottom: 10px;">
+                <h2 class="title_h2">个人简介</h2><br>
+                <p>从2021年12月以网名泪心,开始研究网游安全技术</p>
+                <p>期间完成了SSM博客以及SpringBoot博客的部署,以及小程序的SpringBoot商城</p>
+                <p>尚未掌握也不明白Redis等技术的使用,还是停留于Spring+thymeleaf当中,未曾插手vue学习</p>
+                <p>22年末开始着手GameGuardian的使用,能够制作一体化修改器并熟练抓取内存数据</p>
+            </div>
+<!--            这里可以添加全局弹窗客服模态窗-->
+        </div>
+    </div>
+
+<!--  尾部  -->
+
+
+
+
+
+</div>
+
+</body>
+</html>
+

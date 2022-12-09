@@ -1,0 +1,23 @@
+server:
+  port: 80
+spring:
+  datasource:
+    username: root
+    password: tear5252port
+    url: jdbc:mysql://localhost:3306/storesys
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+
+#update不会删除原表单数据
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+
